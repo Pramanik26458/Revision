@@ -27,6 +27,17 @@ app.delete('/notes/:id', (req, res) => {
 });
 
 
+// patch
+
+app.patch('/notes/:index', (req, res) => {
+
+    // console.log(req.params.index);
+    notes[req.params.index].description = req.body.description;
+    res.send('Note updated Sucessfully');
+
+});
+
+
 
 app.listen(3000, () => {
   console.log(`Server is running on http://localhost:3000`);
