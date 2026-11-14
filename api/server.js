@@ -17,6 +17,17 @@ app.get('/notes', (req, res) => {
 
 
 
+//delete
+
+app.delete('/notes/:id', (req, res) => {
+    console.log(req.params.id);
+    delete notes[req.params.id];
+
+    res.send('Note deleted');
+});
+
+
+
 app.listen(3000, () => {
   console.log(`Server is running on http://localhost:3000`);
 });
